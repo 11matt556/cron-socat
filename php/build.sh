@@ -3,6 +3,8 @@
 # Pre Clean
 docker rmi djpic/php:mysqli
 docker rmi djpic/php:mysqli-browscap
+docker rmi djpic/php:mysqli-full_php_browscap
+docker rmi djpic/php:mysqli-lite_php_browscap
 
 # Build apache image with mysqli and memcached extension
 cd MySQLi
