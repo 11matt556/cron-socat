@@ -1,0 +1,56 @@
+version: "3.2"
+services:
+  nginx:
+    image: djpic/nginx:phpfpm
+
+    networks:
+      - FrontEnd
+      - BackEnd
+
+    depends_on:
+      - php
+
+    volumes:
+      - ./application/:/app
+
+    labels:
+      - "traefik.enable=true"
+
+      - "traefik.http.routers.djpicdemo-web.rule=Host(`demo.djpic.net`)"
+      - "traefik.http.routers.djpicdemo-web.entrypoints=web"
+      - "traefik.http.routers.djpicdemo-web.middlewares=https-redirect@file"
+
+      - "traefik.http.routers.djpicdemo-tls.rule=Host(`demo.djpic.net`)"
+      - "traefik.http.routers.djpicdemo-tls.entrypoints=websecure"
+      - "traefik.http.routers.djpicdemo-tls.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.djpicdemo-tls.middlewares=secure-headers@file, compress-content@file"
+
+      #- "traefik.http.services.djpichome.loadbalancer.server.port=443"
+      #- "traefik.http.services.djpichome.loadbalancer.server.scheme=https"
+
+    restart: always
+
+  php:
+    image: djpic/php:mysqli
+
+    networks:
+      - BackEnd
+
+    volumes:
+      - ./application/:/app
+
+  memcached:
+    image: library/memcached:alpine
+
+    networks:
+      - BackEnd
+
+    command: ["-m", "64m"]
+
+    restart: always
+
+networks:
+  FrontEnd:
+    external: true
+
+  BackEnd:
