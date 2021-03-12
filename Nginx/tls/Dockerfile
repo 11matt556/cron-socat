@@ -1,4 +1,4 @@
-FROM nginx:1.19.7-alpine
+FROM nginx:1.19.8-alpine
 
 COPY localhost.crt /certs/localhost.crt
 COPY localhost.key /certs/localhost.key
