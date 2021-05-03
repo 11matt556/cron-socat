@@ -41,5 +41,11 @@ docker push djpic/nginx:phpfpm
 docker push djpic/nginx:latest
 docker push djpic/nginx:phpfpm-tls
 
+# Create Down for Maintenance Image
+cd ../../downformaintenance
+docker build --tag djpic/nginx:dfm .
+docker push djpic/nginx:dfm
+
+
 # Remove Images
 docker rmi djpic/nginx:standard djpic/nginx:tls djpic/nginx:phpfpm djpic/nginx:latest djpic/nginx:phpfpm-tls
