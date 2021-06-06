@@ -48,4 +48,4 @@ docker push djpic/nginx:dfm
 
 
 # Remove Images
-docker rmi djpic/nginx:standard djpic/nginx:tls djpic/nginx:phpfpm djpic/nginx:latest djpic/nginx:phpfpm-tls
+docker rmi djpic/nginx:standard djpic/nginx:tls djpic/nginx:phpfpm djpic/nginx:latest djpic/nginx:phpfpm-tls djpic/nginx:dfm
