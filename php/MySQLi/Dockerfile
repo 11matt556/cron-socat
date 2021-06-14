@@ -12,3 +12,5 @@ RUN set -xe \
     && rm -rf /usr/share/php7 \
     && rm -rf /tmp/* \
     && apk del .memcached-deps .phpize-deps
+
+WORKDIR /app/
