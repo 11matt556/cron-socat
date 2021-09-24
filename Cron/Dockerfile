@@ -1,4 +1,4 @@
-FROM alpine:3.13.5
+FROM alpine:3.13.6
 
 RUN mkdir /etc/periodic/1min
 RUN mkdir /etc/periodic/30min
