@@ -4,10 +4,10 @@
 docker rmi djpic/nginx:standard djpic/nginx:tls djpic/nginx:phpfpm djpic/nginx:latest djpic/nginx:phpfpm-tls
 
 
-# build standard ngnix image
+# Build standard ngnix image
 docker build --tag djpic/nginx:standard .
 
-# build phpfpm NGINX image
+# Build phpfpm NGINX image
 cd phpfpm
 docker build --tag djpic/nginx:phpfpm .
 docker tag djpic/nginx:phpfpm djpic/nginx:latest
@@ -28,7 +28,7 @@ docker build --tag djpic/nginx:tls .
 rm localhost.crt localhost.key
 
 
-# build phpfpm NGINX image with tls
+# Build phpfpm NGINX image with tls
 cd ../phpfpm/tls
 docker build --tag djpic/nginx:phpfpm-tls .
 rm localhost.crt localhost.key
