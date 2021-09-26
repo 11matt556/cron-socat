@@ -5,7 +5,7 @@ WORKDIR /app/
 # Install MySQLi
 RUN docker-php-ext-install mysqli
 
-# Install Memched Exentions
+# Install Memcached Extensions
 ENV MEMCACHED_DEPS zlib-dev libmemcached-dev cyrus-sasl-dev
 RUN apk add --no-cache --update libmemcached-libs zlib
 RUN set -xe \
