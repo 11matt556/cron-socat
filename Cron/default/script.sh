@@ -1,5 +1,6 @@
 #!/bin/sh
-cd /home
-rm -rf cron.php
 echo "Running default command...." > /dev/stdout
-wget http://nginx/cron.php > /dev/stdout
+SCRIPT_NAME=/app/private/cron.php \
+SCRIPT_FILENAME=/app/private/cron.php \
+REQUEST_METHOD=GET \
+cgi-fcgi -bind -connect php:9000
