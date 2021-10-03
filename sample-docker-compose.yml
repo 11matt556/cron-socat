@@ -25,9 +25,6 @@ services:
       - "traefik.http.routers.djpicdemo-tls.tls.certresolver=letsencrypt"
       - "traefik.http.routers.djpicdemo-tls.middlewares=secure-headers@file, compress-content@file"
 
-      #- "traefik.http.services.djpicdemo.loadbalancer.server.port=443"
-      #- "traefik.http.services.djpicdemo.loadbalancer.server.scheme=https"
-
     restart: always
 
   php:
