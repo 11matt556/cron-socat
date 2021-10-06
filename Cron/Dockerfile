@@ -12,7 +12,7 @@ RUN mkdir /etc/periodic/1min \
 # Copy in customized crontab file
 COPY crontab /etc/crontabs/root
 
-# Copy in entrypoint.sh script; this allows cron to run as deamon
+# Copy in entrypoint.sh script; this allows cron to run as daemon
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
 ENTRYPOINT /entrypoint.sh
