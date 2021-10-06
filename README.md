@@ -17,3 +17,5 @@ All of these images are available pre-built on DockerHub:
 [djpic/nginx](https://hub.docker.com/repository/docker/djpic/nginx)
 
 [djpic/cron](https://hub.docker.com/repository/docker/djpic/cron)
+
+Get notified when images are updated via twitter [@djpic_llc](https://twitter.com/djpic_llc)
