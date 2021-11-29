@@ -1,4 +1,4 @@
-FROM php:8.0.12-fpm-alpine
+FROM php:8.0.13-fpm-alpine
 
 WORKDIR /app/
 
@@ -24,4 +24,3 @@ RUN mkdir /composer/ \
     && php composer-setup.php \
     && php -r "unlink('composer-setup.php');" \
     && mv composer.phar /usr/local/bin/composer
-
