@@ -6,8 +6,13 @@ build-cron:
   script:
     - cd Cron/
     - docker login --username $username --password $password
-    - chmod 755 build.sh
-    - ./build.sh
+    - docker build --tag djpic/cron:standard .
+    - docker tag djpic/cron:standard djpic/cron:latest
+    - cd default
+    - docker build --tag djpic/cron:default .
+    - docker push djpic/cron:latest
+    - docker push djpic/cron:standard
+    - docker push djpic/cron:default
 
 build-nginx:
   stage: build
