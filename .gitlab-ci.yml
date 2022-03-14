@@ -1,19 +1,25 @@
-stages:
-  - build
+variables:
+  DOCKER_TLS_CERTDIR: "/certs"
+
+services:
+  - docker:dind
+
+before_script:
+  - docker login --username $username --password $password
 
 build-cron:
   stage: build
   script:
     - cd Cron/
-    - docker login --username $username --password $password
     - chmod 755 build.sh
     - ./build.sh
 
 build-nginx:
   stage: build
   script:
+    - apk update
+    - apk add openssl
     - cd Nginx/
-    - docker login --username $username --password $password
     - chmod 755 build.sh
     - ./build.sh
 
@@ -21,7 +27,6 @@ build-php:
   stage: build
   script:
     - cd PHP/
-    - docker login --username $username --password $password
     - chmod 755 build.sh
     - ./build.sh
 
@@ -29,6 +34,5 @@ build-Traefik:
   stage: build
   script:
     - cd Traefik
-    - docker login --username $username --password $password
     - chmod 755 build.sh
     - ./build.sh

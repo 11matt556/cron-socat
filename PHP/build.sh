@@ -1,10 +1,4 @@
-#!/bin/bash
-
-# Pre Clean
-docker rmi djpic/php:mysqli
-docker rmi djpic/php:mysqli-browscap
-docker rmi djpic/php:mysqli-full_php_browscap
-docker rmi djpic/php:mysqli-lite_php_browscap
+#!/bin/sh
 
 # Build apache image with mysqli and memcached extension
 cd MySQLi
@@ -27,9 +21,3 @@ docker push djpic/php:mysqli
 docker push djpic/php:mysqli-browscap
 docker push djpic/php:mysqli-full_php_browscap
 docker push djpic/php:mysqli-lite_php_browscap
-
-# Docker Clean Up
-docker rmi djpic/php:mysqli
-docker rmi djpic/php:mysqli-browscap
-docker rmi djpic/php:mysqli-full_php_browscap
-docker rmi djpic/php:mysqli-lite_php_browscap

@@ -1,9 +1,4 @@
-#!/bin/bash
-
-# Remove stale images
-docker rmi djpic/cron:latest
-docker rmi djpic/cron:default
-docker rmi djpic/cron:standard
+#!/bin/sh
 
 # Build standard cron image
 docker build --tag djpic/cron:standard .
@@ -17,8 +12,3 @@ docker build --tag djpic/cron:default .
 docker push djpic/cron:latest
 docker push djpic/cron:standard
 docker push djpic/cron:default
-
-# remove images
-docker rmi djpic/cron:default
-docker rmi djpic/cron:standard
-docker rmi djpic/cron:latest
