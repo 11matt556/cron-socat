@@ -1,3 +1,4 @@
+# Gitlab CI to build docker images
 variables:
   DOCKER_TLS_CERTDIR: "/certs"
 
