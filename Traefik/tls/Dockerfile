@@ -1,4 +1,4 @@
-FROM traefik:v2.6.1
+FROM traefik:v2.6.3
 
 COPY /traefik_dynamic.yml /configs/traefik_dynamic.yml
 
