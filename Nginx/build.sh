@@ -27,11 +27,11 @@ docker build --tag djpic/nginx:phpfpm-tls .
 rm localhost.crt localhost.key
 
 # Push Images
-#docker push djpic/nginx:standard
-#docker push djpic/nginx:tls
-#docker push djpic/nginx:phpfpm
-#docker push djpic/nginx:latest
-#docker push djpic/nginx:phpfpm-tls
+docker push djpic/nginx:standard
+docker push djpic/nginx:tls
+docker push djpic/nginx:phpfpm
+docker push djpic/nginx:latest
+docker push djpic/nginx:phpfpm-tls
 
 # Create Down for Maintenance Image
 cd ../../downformaintenance
