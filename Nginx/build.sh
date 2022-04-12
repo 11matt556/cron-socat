@@ -39,4 +39,4 @@ docker push djpic/nginx:$current_nginx_version-phpfpm-tls
 # Create Down for Maintenance Image
 cd ../../downformaintenance
 docker build --build-arg nginx_version=$current_nginx_version --tag djpic/nginx:$current_nginx_version-dfm .
-docker push djpic/nginx:dfm
+docker push djpic/nginx:$current_nginx_version-dfm
