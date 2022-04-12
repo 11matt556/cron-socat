@@ -9,5 +9,5 @@ docker build --build-arg traefik_version=$current_traefik_version --tag djpic/tr
 docker tag djpic/traefik:latest
 
 # Push to Repos
-#docker push djpic/traefik:latest
-#docker push djpic/traefik:$current_traefik_version-tls
+docker push djpic/traefik:latest
+docker push djpic/traefik:$current_traefik_version-tls

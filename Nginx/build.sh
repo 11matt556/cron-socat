@@ -30,13 +30,13 @@ docker build --build-arg nginx_version=$current_nginx_version --tag djpic/nginx:
 rm localhost.crt localhost.key
 
 # Push Images
-#docker push djpic/nginx:$current_nginx_version-standard
-#docker push djpic/nginx:$current_nginx_version-tls
-#docker push djpic/nginx:$current_nginx_version-phpfpm
-#docker push djpic/nginx:$current_nginx_version-latest
-#docker push djpic/nginx:$current_nginx_version-phpfpm-tls
+docker push djpic/nginx:$current_nginx_version-standard
+docker push djpic/nginx:$current_nginx_version-tls
+docker push djpic/nginx:$current_nginx_version-phpfpm
+docker push djpic/nginx:$current_nginx_version-latest
+docker push djpic/nginx:$current_nginx_version-phpfpm-tls
 
 # Create Down for Maintenance Image
 cd ../../downformaintenance
 docker build --build-arg nginx_version=$current_nginx_version --tag djpic/nginx:$current_nginx_version-dfm .
-#docker push djpic/nginx:dfm
+docker push djpic/nginx:dfm

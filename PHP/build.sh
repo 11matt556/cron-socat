@@ -19,7 +19,7 @@ docker build --build-arg php_version=$current_php_version --tag djpic/php:$curre
 rm browscap.ini
 
 # Docker Push Image
-#docker push djpic/php:$current_php_version-mysqli
-#docker push djpic/php:$current_php_version-mysqli-browscap
-#docker push djpic/php:$current_php_version-mysqli-full_php_browscap
-#docker push djpic/php:$current_php_version-mysqli-lite_php_browscap
+docker push djpic/php:$current_php_version-mysqli
+docker push djpic/php:$current_php_version-mysqli-browscap
+docker push djpic/php:$current_php_version-mysqli-full_php_browscap
+docker push djpic/php:$current_php_version-mysqli-lite_php_browscap

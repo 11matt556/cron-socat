@@ -12,6 +12,6 @@ cd default
 docker build --build-arg alpine_version=$current_alpine_version --tag djpic/cron:$current_alpine_version-default .
 
 # Push images to Dockerhub
-#docker push djpic/cron:latest
-#docker push djpic/cron:$current_alpine_version-standard
-#docker push djpic/cron:$current_alpine_version-default
+docker push djpic/cron:latest
+docker push djpic/cron:$current_alpine_version-standard
+docker push djpic/cron:$current_alpine_version-default
