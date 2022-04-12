@@ -1,14 +1,17 @@
 #!/bin/sh
 
+# What base image of Alpine to use for all builds
+current_alpine_version=3.14
+
 # Build standard cron image
-docker build --tag djpic/cron:standard .
-docker tag djpic/cron:standard djpic/cron:latest
+docker build --build-arg alpine_version=$current_alpine_version --tag djpic/cron:$current_alpine_version-standard .
+docker tag djpic/cron:latest
 
 # Build default cron image
 cd default
-docker build --tag djpic/cron:default .
+docker build --build-arg alpine_version=$current_alpine_version --tag djpic/cron:$current_alpine_version-default .
 
 # Push images to Dockerhub
-docker push djpic/cron:latest
-docker push djpic/cron:standard
-docker push djpic/cron:default
+#docker push djpic/cron:latest
+#docker push djpic/cron:$current_alpine_version-standard
+#docker push djpic/cron:$current_alpine_version-default

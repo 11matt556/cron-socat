@@ -1,4 +1,6 @@
-FROM alpine:3.13.9
+ARG alpine_version
+
+FROM alpine:${alpine_version}
 
 # Install fastCGI to execute PHP scripts in PHP-FPM container
 RUN apk update \

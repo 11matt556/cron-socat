@@ -1,4 +1,6 @@
-FROM php:8.0.17-fpm-alpine
+ARG php_version
+
+FROM php:${php_version}-fpm-alpine
 
 WORKDIR /app/
 

@@ -1,12 +1,15 @@
 #!/bin/sh
 
+# What base image of NGINX to use for all builds
+current_nginx_version=1.20
+
 # Build standard ngnix image
-docker build --tag djpic/nginx:standard .
+docker build --build-arg nginx_version=$current_nginx_version --tag djpic/nginx:$current_nginx_version-standard .
 
 # Build phpfpm NGINX image
 cd phpfpm
-docker build --tag djpic/nginx:phpfpm .
-docker tag djpic/nginx:phpfpm djpic/nginx:latest
+docker build --build-arg nginx_version=$current_nginx_version --tag djpic/nginx:$current_nginx_version-phpfpm .
+docker tag djpic/nginx:$current_nginx_version-phpfpm djpic/nginx:latest
 
 # Create Certificate
 cd ../
@@ -18,22 +21,22 @@ mv localhost.crt phpfpm/tls/localhost.crt
 
 # Build tls NGINX image
 cd tls
-docker build --tag djpic/nginx:tls .
+docker build --build-arg nginx_version=$current_nginx_version --tag djpic/nginx:$current_nginx_version-tls .
 rm localhost.crt localhost.key
 
 # Build phpfpm NGINX image with tls
 cd ../phpfpm/tls
-docker build --tag djpic/nginx:phpfpm-tls .
+docker build --build-arg nginx_version=$current_nginx_version --tag djpic/nginx:$current_nginx_version-phpfpm-tls .
 rm localhost.crt localhost.key
 
 # Push Images
-#docker push djpic/nginx:standard
-#docker push djpic/nginx:tls
-#docker push djpic/nginx:phpfpm
-#docker push djpic/nginx:latest
-#docker push djpic/nginx:phpfpm-tls
+#docker push djpic/nginx:$current_nginx_version-standard
+#docker push djpic/nginx:$current_nginx_version-tls
+#docker push djpic/nginx:$current_nginx_version-phpfpm
+#docker push djpic/nginx:$current_nginx_version-latest
+#docker push djpic/nginx:$current_nginx_version-phpfpm-tls
 
 # Create Down for Maintenance Image
 cd ../../downformaintenance
-docker build --tag djpic/nginx:dfm .
-docker push djpic/nginx:dfm
+docker build --build-arg nginx_version=$current_nginx_version --tag djpic/nginx:$current_nginx_version-dfm .
+#docker push djpic/nginx:dfm

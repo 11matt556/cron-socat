@@ -1,11 +1,13 @@
 #!/bin/sh
 
+# What base image of Traefik to use for all builds
+current_traefik_version=2.6
 
 # Build Traefik with default dynamic configuration
 cd tls
-docker build --tag djpic/traefik:tls .
-docker tag djpic/traefik:tls djpic/traefik:latest
+docker build --build-arg traefik_version=$current_traefik_version --tag djpic/traefik:$current_traefik_version-tls .
+docker tag djpic/traefik:latest
 
 # Push to Repos
-docker push djpic/traefik:latest
-docker push djpic/traefik:tls
+#docker push djpic/traefik:latest
+#docker push djpic/traefik:$current_traefik_version-tls
