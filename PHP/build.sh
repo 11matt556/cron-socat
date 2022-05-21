@@ -1,6 +1,6 @@
 #!/bin/sh
 
-current_php_version=8.0
+current_php_version=8.0.19
 
 # Build apache image with mysqli and memcached extension
 cd MySQLi
