@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # What base image of Traefik to use for all builds
-current_traefik_version=2.6.7
+current_traefik_version=2.8.3
 
 # Build Traefik with default dynamic configuration
 cd tls
