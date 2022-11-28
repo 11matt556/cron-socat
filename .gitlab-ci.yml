@@ -8,10 +8,12 @@ services:
 before_script:
   - docker login --username $username --password $password
 
-build-cron:
+build-php:
   stage: build
   script:
-    - cd Cron/
+    - apk update
+    - apk add bash
+    - cd PHP/
     - chmod 755 build.sh
     - ./build.sh
 
@@ -24,10 +26,10 @@ build-nginx:
     - chmod 755 build.sh
     - ./build.sh
 
-build-php:
+build-cron:
   stage: build
   script:
-    - cd PHP/
+    - cd Cron/
     - chmod 755 build.sh
     - ./build.sh
 
