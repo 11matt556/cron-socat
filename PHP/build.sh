@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# declare an array called array and define 3 vales
+# Declare array to define the two different versions that will be used
+# First one is the current stable version; the first is the newer supported version
 php_versions=(8.0.26 8.1.13)
 
 for php_version in "${php_versions[@]}"
