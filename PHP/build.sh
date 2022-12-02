@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # declare an array called array and define 3 vales
-php_versions=(8.0.25 8.1.12)
+php_versions=(8.0.26 8.1.13)
 
 for php_version in "${php_versions[@]}"
 do
