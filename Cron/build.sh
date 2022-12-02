@@ -19,6 +19,8 @@ docker tag djpic/cron:$current_alpine_version-dev djpic/cron:dev
 
 # Push images to Dockerhub
 docker push djpic/cron:latest
+docker push djpic/cron:dev
+docker push djpic/cron:default
 docker push djpic/cron:$current_alpine_version-standard
 docker push djpic/cron:$current_alpine_version-default
 docker push djpic/cron:$current_alpine_version-dev
