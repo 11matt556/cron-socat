@@ -2,7 +2,7 @@
 
 # Declare array to define the two different versions that will be used
 # First one is the current stable version; the first is the newer supported version
-php_versions=(8.0.26 8.1.13)
+php_versions=(8.0.27 8.1.14)
 
 for php_version in "${php_versions[@]}"
 do
