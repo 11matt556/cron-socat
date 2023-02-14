@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # What base image of Alpine to use for all builds
-current_alpine_version=3.16.3
+current_alpine_version=3.16.4
 
 # Build standard cron image
 docker build --build-arg alpine_version=$current_alpine_version --tag djpic/cron:$current_alpine_version-standard .
