@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # What base image of NGINX to use for all builds
-current_nginx_version=1.22.1
+current_nginx_version=1.24.0
 
 # Build standard ngnix image
 docker build --build-arg nginx_version=$current_nginx_version --tag djpic/nginx:$current_nginx_version-standard .
