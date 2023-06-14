@@ -1,10 +1,10 @@
-ARG alpine_version
+ARG alpine_socat_version
 
-FROM alpine:${alpine_version}
+FROM alpine/socat:${alpine_socat_version}
 
-# Install fastCGI to execute PHP scripts in PHP-FPM container
-RUN apk update \
-    && apk add fcgi
+# Installs fastcgi to execute PHP scripts in PHP-FPM container
+#RUN apk update \
+#    && apk add fastcgi
 
 # Create Crontab directories
 RUN mkdir /etc/periodic/1min \
