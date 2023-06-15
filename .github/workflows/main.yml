@@ -18,4 +18,5 @@ jobs:
         git config --global user.email "11matt556@users.noreply.github.com"
         git remote set-url origin "https://oauth2:${{ secrets.Gitlab }}@gitlab.com/11matt556/docker-cron.git"
         # git commit -a -m "$(echo $(git log -1 --pretty=%B)"
+        git pull
         git push origin master
