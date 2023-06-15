@@ -1,0 +1,24 @@
+name: Continuous Integration
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.Gitlab }}
+        repository: https://gitlab.com/11matt556/docker-cron/
+    # Commit and push all changed files.
+    - name: Commit build artifacts (dist, devdist, docs, coverage)
+      run: |
+        git config --global user.name "Github Actions"
+        git config --global user.email "11matt556@users.noreply.github.com"
+        git remote set-url origin "https://oauth2:${{ secrets.Gitlab }}@https://gitlab.com/11matt556/docker-cron.git"
+        git commit -a -m "$(echo $(git log -1 --pretty=%B)"
+        git push origin master
