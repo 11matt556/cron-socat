@@ -10,9 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    # Commit and push all changed files.
-    - name: Commit build artifacts (dist, devdist, docs, coverage)
+    - name: Checkout Github repo
+      uses: actions/checkout@v3
+      
+    - name: Push to Gitlab repo
       run: |
         git config --global user.name "Github Actions"
         git config --global user.email "11matt556@users.noreply.github.com"
