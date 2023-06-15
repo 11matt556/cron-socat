@@ -1,0 +1,12 @@
+stages:
+    - mirror
+
+commit_job:
+  stage: mirror
+  script:
+    - git config user.name "Gitlab CI"
+    - git config user.email "mrhowel@g.clemson.edu"
+    - git add *
+    - git commit -m $(echo $(git log -1 --pretty=%B))
+    # we're on a detached head but we can push the commits we made to the remote branch like so:
+    - git push HEAD:$CI_COMMIT_REF_NAME
