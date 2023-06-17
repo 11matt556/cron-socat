@@ -21,3 +21,7 @@ jobs:
     steps:
       - name: Print
         run: echo "Updated base image of cron-socat available"
+        # Check if issue has already been created
+        # Create issue stating update is available if issue has not already been created
+        # List available tags from base image in the issue
+
