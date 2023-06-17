@@ -1,0 +1,23 @@
+name: Check for updates to base image
+on: workflow_dispatch
+
+jobs:
+  check-for-update:
+    runs-on: ubuntu-latest
+    outputs:
+      needs-updating: ${{ steps.check.outputs.needs-updating }}
+    steps:
+      - name: Check if update available
+        id: check
+        uses: lucacome/docker-image-update-checker@v1
+        with:
+          base-image: alpine/socat:1.7.4.4
+          image: 11matt556/cron-socat:1.7.4.4
+
+  update-action:
+    if: needs.check.outputs.needs-updating == 'true'
+    needs: check-for-update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print
+        run: echo "Updated base image of cron-socat available"
