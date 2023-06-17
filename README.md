@@ -5,10 +5,10 @@ Based specifically on https://hub.docker.com/repository/docker/djpic/cron
 
 Modified to use alpine/socat instead of alpine, removed fastcgi, and not using gitlab CI.
 
-Mirrors from Github to Gitlab.
-github: https://github.com/11matt556/cron-socat
+Mirrors from Github to Gitlab.\
+[GitHub Link](https://github.com/11matt556/cron-socat)
 \
-gitlab: https://gitlab.com/11matt556/docker-cron
+[GitLab Link](https://gitlab.com/11matt556/docker-cron)
 
 # TODO 
 
