@@ -1,3 +1,6 @@
+[![Publish Docker Image](https://github.com/11matt556/socat-cron/actions/workflows/publish.yml/badge.svg?event=release)](https://github.com/11matt556/socat-cron/actions/workflows/publish.yml)
+[![Push changes to Gitlab](https://github.com/11matt556/socat-cron/actions/workflows/gitlab-push.yml/badge.svg?event=push)](https://github.com/11matt556/socat-cron/actions/workflows/gitlab-push.yml)
+
 # Socat-Cron
 
 Forked from djpic's [docker-images](https://gitlab.com/djpic/docker-images) project on Gitlab. 
