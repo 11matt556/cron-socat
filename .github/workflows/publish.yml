@@ -49,4 +49,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-arg: alpine_socat_version=${{ steps.meta.outputs.tags }}
+          build-args: alpine_socat_version=${{ steps.meta.outputs.tags }}
