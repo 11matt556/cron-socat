@@ -2,7 +2,6 @@ name: Publish Docker image
 on: 
   release:
     types: [published]
-  repository_dispatch:
 
 env:
   DOCKER_HUB: docker.io/11matt556/socat-cron
@@ -46,7 +45,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          push: false
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-arg: alpine_socat_version=${{ steps.meta.outputs.tags }}
