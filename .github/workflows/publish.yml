@@ -21,7 +21,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ github.token }}
       - name: Build
-        run: ./build.sh {{ $env.ALPINE_SOCAT_VERSION }}
+        run: ./build.sh ${{ env.ALPINE_SOCAT_VERSION }}
       - name: Publish to GitHub
         run: | 
               docker push ghcr.io/11matt556/socat-cron:latest
