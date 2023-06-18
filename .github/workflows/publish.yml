@@ -14,12 +14,25 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
-      
-      - name: Log in to the Container registry
+      - name: Log in to GitHub Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ github.token }}
-      - name: Build and publish
-        run: ./build.sh
+      - name: Build
+        run: ./build.sh {{ $env.ALPINE_SOCAT_VERSION }}
+      - name: Publish to GitHub
+        run: | 
+              docker push ghcr.io/11matt556/socat-cron:latest
+              docker push ghcr.io/11matt556/socat-cron:$current_alpine_version
+              
+      - name: Log in to Docker Hub
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Publish to Docker Hub 
+        run: |
+              docker push docker.io/11matt556/socat-cron:latest
+              docker push docker.io/11matt556/socat-cron:$current_alpine_version
