@@ -4,7 +4,7 @@ on: workflow_dispatch
 env:
   ALPINE_SOCAT_VERSION: 1.7.4.4
   DOCKER_HUB: docker.io/11matt556/socat-cron
-  GITHUB_CONTAINER: docker.io/11matt556/socat-cron
+  GITHUB_CONTAINER: ghcr.io/11matt556/socat-cron
   
 jobs:
   push_to_registries:
@@ -29,8 +29,8 @@ jobs:
 
       - name: Publish to GitHub
         run: | 
-              docker push ghcr.io/11matt556/socat-cron:latest
-              docker push ghcr.io/11matt556/socat-cron:${{ env.ALPINE_SOCAT_VERSION }}
+              docker push ${{ env.GITHUB_CONTAINER }}:latest
+              docker push ${{ env.GITHUB_CONTAINER }}:${{ env.ALPINE_SOCAT_VERSION }}
               
       - name: Log in to Docker Hub
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
@@ -39,5 +39,5 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Publish to Docker Hub 
         run: |
-              docker push docker.io/11matt556/socat-cron:latest
-              docker push docker.io/11matt556/socat-cron:${{ env.ALPINE_SOCAT_VERSION }}
+              docker push ${{ env.DOCKER_HUB }}:latest
+              docker push ${{ env.DOCKER_HUB }}:${{ env.ALPINE_SOCAT_VERSION }}
