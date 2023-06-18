@@ -1,6 +1,6 @@
 ARG alpine_socat_version
 
-FROM alpine/socat:1.7.4.4
+FROM alpine/socat:${alpine_socat_version}
 
 # Installs fastcgi to execute PHP scripts in PHP-FPM container
 #RUN apk update \
