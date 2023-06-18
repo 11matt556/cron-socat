@@ -7,12 +7,20 @@ jobs:
     outputs:
       needs-updating: ${{ steps.check.outputs.needs-updating }}
     steps:
+      - name: Get latest release of this repo
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          owner: 11matt556
+          repo: socat-cron
+          excludes: prerelease, draft
+          token: ${{ secrets.GITHUB_TOKEN }}
+    
       - name: Check if update available
         id: check
         uses: lucacome/docker-image-update-checker@v1
         with:
-          base-image: alpine/socat:1.7.4.4
-          image: 11matt556/cron-socat:1.7.4.4
+          base-image: alpine/socat:${{ steps.keydb.outputs.release }}
+          image: 11matt556/socat-cron:${{ steps.keydb.outputs.release }}
 
   update-action:
     if: needs.check.outputs.needs-updating == 'true'
