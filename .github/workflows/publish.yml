@@ -1,6 +1,8 @@
 name: Publish Docker image
-on: release
-
+on:
+  release:
+    types: [published]
+    
 env:
   DOCKER_HUB: docker.io/11matt556/socat-cron
   GITHUB_CONTAINER: ghcr.io/11matt556/socat-cron
