@@ -1,8 +1,8 @@
 name: Publish Docker image
-on: |
-  repository_dispatch:
+on: 
   release:
     types: [published]
+  repository_dispatch:
 
 env:
   DOCKER_HUB: docker.io/11matt556/socat-cron
