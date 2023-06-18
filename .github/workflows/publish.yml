@@ -34,7 +34,6 @@ jobs:
           context: .
           push: false
           tags: "11matt556/socat-cron:${{ env.ALPINE_SOCAT_VERSION }}"
-          build-args:  current_alpine_version=${{ env.ALPINE_SOCAT_VERSION }}
-          labels: Testing
+          build-args:  alpine_socat_version=${{ env.ALPINE_SOCAT_VERSION }}
         #  tags: ${{ steps.meta.outputs.tags }}
         #  labels: ${{ steps.meta.outputs.labels }}
