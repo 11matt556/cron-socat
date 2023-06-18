@@ -6,6 +6,6 @@ docker build --build-arg alpine_socat_version=$current_alpine_version --tag dock
 docker build --build-arg alpine_socat_version=$current_alpine_version --tag ghcr.io/11matt556/socat-cron:$current_alpine_version .
 
 # Push images to Dockerhub
-#docker push ghcr.io/11matt556/socat-cron:$current_alpine_version
-docker push docker.io/11matt556/socat-cron:latest
+docker push ghcr.io/11matt556/socat-cron:$current_alpine_version
+#docker push docker.io/11matt556/socat-cron:latest
 #docker push docker.io/11matt556/socat-cron:$current_alpine_version
