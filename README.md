@@ -11,6 +11,6 @@ Mirrors from Github to Gitlab.\
 [GitLab Link](https://gitlab.com/11matt556/docker-cron)
 
 # TODO 
-
+* Update publishing workflow to be based off release tag instead of push
 * Setup Github Actions to update/notify when new alpine/socat base image is available
 * Show example usage
