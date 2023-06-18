@@ -1,5 +1,5 @@
 name: Publish Docker image
-on: workflow_dispatch
+on: push
 
 env:
   ALPINE_SOCAT_VERSION: 1.7.4.4
