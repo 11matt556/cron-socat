@@ -5,7 +5,7 @@ jobs:
   check-for-update:
     runs-on: ubuntu-latest
     outputs:
-      needs-updating: ${{ steps.check.outputs.needs-updating }}
+      needs-updating: ${{ steps.check-alpine-socat.outputs.needs-updating }}
     steps:
       - name: Get latest release of this repo
         id: get-latest-release
@@ -17,7 +17,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
     
       - name: Check if update available in alpine/socat
-        id: check
+        id: check-alpine-socat
         uses: lucacome/docker-image-update-checker@v1
         with:
           base-image: alpine/socat:${{ steps.get-latest-release.outputs.release }}
@@ -29,7 +29,7 @@ jobs:
     needs: check-for-update
     runs-on: ubuntu-latest
     outputs: 
-      issue-exists: ${{ steps.check-if-exists.outputs.exists }}
+      issue-exists: ${{ steps.check-if-issue-exists.outputs.exists }}
     steps: 
       - name: Search for existing issue
         id: matching-issues
@@ -39,10 +39,11 @@ jobs:
           token: ${{ github.token }}
           
       - name: Check if issue already exists
-        id: check-if-exists
+        id: check-if-issue-exists
         shell: bash
         run: |
-            if [ "${{ steps.check.outputs.matching-issues }}" != '' ]; then
+            matching_issues = $(cat ${{ steps.matching-issues.outputs.path }})
+            if [ $matching_issues != '' ]; then
             echo "exists=true" >> $GITHUB_OUTPUT;
             else
             echo "exists=false" >> $GITHUB_OUTPUT;
