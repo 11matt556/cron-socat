@@ -4,9 +4,17 @@
 # Socat-Cron
 Forked from djpic's [docker-images](https://gitlab.com/djpic/docker-images) project on Gitlab. 
 
-Removed non-cron items, modified to use alpine/socat instead of alpine, removed fastcgi, and switched to Github Actions CI/CD. 
+Removed non-cron items, modified to use alpine/socat instead of alpine, removed fastcgi, and switched CI/CD to Github Actions. 
 
 My purpose for this is as simple scheduler for docker container actions without Docker Swarm or k8s. The idea is to pass through docker.sock and use socat in the script to access docker resources on the host. 
+
+## Source Repo
+* [Github](https://github.com/11matt556/socat-cron)
+* [Gitlab (mirror)](https://gitlab.com/11matt556/docker-cron)
+
+## Docker Image
+* [GHCR](https://github.com/11matt556/socat-cron/pkgs/container/socat-cron)
+* [Dockerhub](https://hub.docker.com/r/11matt556/socat-cron) 
 
 # How to use
 Mount script(s) into the directories below to run them at the associated interval:
@@ -33,9 +41,12 @@ services:
          - ./foo.sh:/etc/periodic/1min/foo.sh
 ```
 
-# Github Actions
-* Mirrors from [GitHub](https://github.com/11matt556/socat-cron) to [GitLab](https://gitlab.com/11matt556/docker-cron)
-* Releases automaticacally published to [GHCR](https://github.com/11matt556/socat-cron/pkgs/container/socat-cron) and [Dockerhub](https://hub.docker.com/r/11matt556/socat-cron) 
+
+
+# CI/CD
+This project uses Github actions for the following:
+* Mirror from [GitHub](https://github.com/11matt556/socat-cron) to [GitLab](https://gitlab.com/11matt556/docker-cron)
+* Publish Github releases to [GHCR](https://github.com/11matt556/socat-cron/pkgs/container/socat-cron) and [Dockerhub](https://hub.docker.com/r/11matt556/socat-cron) 
 
 # Credits
 * https://hub.docker.com/r/djpic/cron
