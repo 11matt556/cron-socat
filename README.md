@@ -4,7 +4,7 @@
 # Socat-Cron
 Forked from djpic's [docker-images](https://gitlab.com/djpic/docker-images) project on Gitlab. 
 
-Removed non-cron item, modified to use alpine/socat instead of alpine, removed fastcgi, and switched to Github Actions CI/CD. 
+Removed non-cron items, modified to use alpine/socat instead of alpine, removed fastcgi, and switched to Github Actions CI/CD. 
 
 My purpose for this is as simple scheduler for docker container actions without Docker Swarm or k8s. The idea is to pass through docker.sock and use socat in the script to access docker resources on the host. 
 
