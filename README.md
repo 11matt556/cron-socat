@@ -34,12 +34,8 @@ services:
 ```
 
 # Github Actions
-* Mirrors from Github to Gitlab
-[GitHub Link](https://github.com/11matt556/socat-cron)
-\
-[GitLab Link](https://gitlab.com/11matt556/docker-cron)
-
-* Releases are automaticacally published to GHCR and (Dockerhub)[https://hub.docker.com/r/11matt556/socat-cron] through Github actions.
+* Mirrors from [GitHub](https://github.com/11matt556/socat-cron) to [GitLab](https://gitlab.com/11matt556/docker-cron)
+* Releases automaticacally published to [GHCR](https://github.com/11matt556/socat-cron/pkgs/container/socat-cron) and [Dockerhub](https://hub.docker.com/r/11matt556/socat-cron) 
 
 # Credits
 * https://hub.docker.com/r/djpic/cron
