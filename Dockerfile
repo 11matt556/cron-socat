@@ -1,6 +1,4 @@
-ARG alpine_socat_version
-
-FROM alpine/socat:${alpine_socat_version}
+FROM alpine/socat:1.7.4.4
 
 # Create Crontab directories
 RUN mkdir /etc/periodic/1min \

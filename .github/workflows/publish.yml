@@ -4,8 +4,8 @@ on:
     types: [published]
     
 env:
-  DOCKER_HUB: docker.io/11matt556/socat-cron
-  GITHUB_CONTAINER: ghcr.io/11matt556/socat-cron
+  DOCKER_HUB: docker.io/11matt556/cron-socat
+  GITHUB_CONTAINER: ghcr.io/11matt556/cron-socat
   
 jobs:
   push_to_registries:
@@ -49,4 +49,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: alpine_socat_version=${{ github.ref_name }}

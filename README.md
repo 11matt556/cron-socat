@@ -1,7 +1,7 @@
 [![Publish Docker Image](https://github.com/11matt556/socat-cron/actions/workflows/publish.yml/badge.svg?event=release)](https://github.com/11matt556/socat-cron/actions/workflows/publish.yml)
 [![Push changes to Gitlab](https://github.com/11matt556/socat-cron/actions/workflows/gitlab-push.yml/badge.svg?event=push)](https://github.com/11matt556/socat-cron/actions/workflows/gitlab-push.yml)
 
-# Socat-Cron
+# cron-socat
 Forked from djpic's [docker-images](https://gitlab.com/djpic/docker-images) project on Gitlab. 
 
 Removed non-cron items, modified to use alpine/socat instead of alpine, removed fastcgi, and switched CI/CD to Github Actions. 
@@ -9,12 +9,12 @@ Removed non-cron items, modified to use alpine/socat instead of alpine, removed 
 My purpose for this is as a simple scheduler for docker container actions without Docker Swarm or k8s. The idea is to pass through docker.sock and communicate with the socket with socat to control containers on the host. 
 
 ## Source Repo
-* [Github](https://github.com/11matt556/socat-cron)
-* [Gitlab (mirror)](https://gitlab.com/11matt556/docker-cron)
+* [Github](https://github.com/11matt556/cron-socat)
+* [Gitlab (mirror)](https://gitlab.com/11matt556/cron-socat)
 
 ## Docker Image
-* [GHCR](https://github.com/11matt556/socat-cron/pkgs/container/socat-cron)
-* [Dockerhub](https://hub.docker.com/r/11matt556/socat-cron) 
+* [GHCR](https://github.com/11matt556/socat-cron/pkgs/container/cron-socat)
+* [Dockerhub](https://hub.docker.com/r/11matt556/cron-socat) 
 
 # How to use
 Mount script(s) into the directories below to run them at the associated interval:
@@ -45,8 +45,8 @@ services:
 
 # CI/CD
 This project uses Github actions for the following:
-* Mirror from [GitHub](https://github.com/11matt556/socat-cron) to [GitLab](https://gitlab.com/11matt556/docker-cron)
-* Publish Github releases to [GHCR](https://github.com/11matt556/socat-cron/pkgs/container/socat-cron) and [Dockerhub](https://hub.docker.com/r/11matt556/socat-cron) 
+* Mirror from [GitHub](https://github.com/11matt556/cron-socat) to [GitLab](https://gitlab.com/11matt556/cron-socat)
+* Publish Github releases to [GHCR](https://github.com/11matt556/socat-cron/pkgs/container/cron-socat) and [Dockerhub](https://hub.docker.com/r/11matt556/cron-socat).
 
 # Credits
 * https://hub.docker.com/r/djpic/cron
