@@ -1,5 +1,6 @@
 [![Publish Docker Image](https://github.com/11matt556/socat-cron/actions/workflows/publish.yml/badge.svg?event=release)](https://github.com/11matt556/socat-cron/actions/workflows/publish.yml)
 [![Push changes to Gitlab](https://github.com/11matt556/socat-cron/actions/workflows/gitlab-push.yml/badge.svg?event=push)](https://github.com/11matt556/socat-cron/actions/workflows/gitlab-push.yml)
+[![Check for updates to base image](https://github.com/11matt556/cron-socat/actions/workflows/check-for-updates.yml/badge.svg)](https://github.com/11matt556/cron-socat/actions/workflows/check-for-updates.yml)
 
 # cron-socat
 Forked from djpic's [docker-images](https://gitlab.com/djpic/docker-images) project on Gitlab. 
@@ -39,6 +40,7 @@ services:
     volumes: 
          - /var/run/docker.sock:/var/run/docker.sock # Only if your script needs to interface with other docker containers
          - ./foo.sh:/etc/periodic/1min/foo.sh
+    restart: unless-stopped
 ```
 
 
