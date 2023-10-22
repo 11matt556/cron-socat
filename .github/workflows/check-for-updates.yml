@@ -20,8 +20,8 @@ jobs:
         id: check-alpine-socat
         uses: lucacome/docker-image-update-checker@v1
         with:
-          base-image: alpine/socat:${{ steps.get-latest-release.outputs.release }}
-          image: 11matt556/socat-cron:${{ steps.get-latest-release.outputs.release }}
+          base-image: alpine/socat
+          image: 11matt556/socat-cron:latest
           
   # Check if issue has already been created
   check-for-reminder-issue:
