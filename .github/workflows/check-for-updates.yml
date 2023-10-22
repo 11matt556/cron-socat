@@ -42,7 +42,7 @@ jobs:
         id: check-if-issue-exists
         shell: bash
         run: |
-            matching_issues = $(cat ${{ steps.matching-issues.outputs.path }})
+            matching_issues=$(cat ${{ steps.matching-issues.outputs.path }})
             if [ $matching_issues != '' ]; then
             echo "exists=true" >> $GITHUB_OUTPUT;
             else
