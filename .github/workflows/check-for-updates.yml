@@ -36,7 +36,7 @@ jobs:
         uses: lee-dohm/select-matching-issues@v1
         with:
           query: 'Updated alpine/socat available is:open'
-          token: ${{ github.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Check if issue already exists
         id: check-if-issue-exists
@@ -59,7 +59,7 @@ jobs:
       - name: create an issue
         uses: dacbd/create-issue-action@main
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           title: Updated alpine/socat available
           body: | 
             Updated alpine/socat base is available. Consider updating.
