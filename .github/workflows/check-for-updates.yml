@@ -1,5 +1,7 @@
 name: Check for updates to base image
 on: workflow_dispatch
+permissions:
+  issues: write
 
 jobs:
   check-for-update:
