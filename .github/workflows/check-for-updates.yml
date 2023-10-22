@@ -21,7 +21,7 @@ jobs:
         uses: lucacome/docker-image-update-checker@v1
         with:
           base-image: alpine/socat
-          image: 11matt556/socat-cron:latest
+          image: 11matt556/cron-socat:latest
           
   # Check if issue has already been created
   check-for-reminder-issue:
