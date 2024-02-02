@@ -39,7 +39,7 @@ services:
     image: 11matt556/cron-socat:latest
     volumes: 
          - /var/run/docker.sock:/var/run/docker.sock # Only if your script needs to interface with other docker containers
-         - ./foo.sh:/etc/periodic/1min/foo.sh
+         - ${PWD}/foo.sh:/etc/periodic/1min/foo.sh
     restart: unless-stopped
 ```
 
